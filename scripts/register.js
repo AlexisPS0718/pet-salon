@@ -45,6 +45,7 @@ let petSalon = {
 
 document.getElementById('numPets').innerHTML = getNumberOfPets();
 document.getElementById('pet-list').innerHTML = getPetNames();
+document.getElementById('avg').innerHTML = getAverageAges();
 
 function getNumberOfPets() {
   return petSalon.pets.length;
@@ -65,4 +66,16 @@ function getPetNames() {
   list += '</ul>';
 
   return list;
+}
+
+function getAverageAges() {
+  let avg = 0;
+
+  for (let i = 0; i < petSalon.pets.length; i++) {
+    avg += petSalon.pets[i].age;
+  }
+
+  avg = avg / petSalon.pets.length;
+
+  return avg;
 }

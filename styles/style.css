@@ -33,7 +33,7 @@ nav {
 }
 
 ul {
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   list-style: none;
   list-style-image: none;
 }
@@ -52,7 +52,7 @@ li {
 }
 
 .container p {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .flex-space-between {
