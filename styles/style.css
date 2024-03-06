@@ -1,0 +1,177 @@
+* {
+  border: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+main {
+  background-color: #dedede;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin-top: 1.5rem;
+}
+
+h2 {
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+ul {
+  padding-bottom: 3rem;
+  list-style: none;
+  list-style-image: none;
+}
+
+li {
+  position: relative;
+  direction: rtl;
+  left: -1rem;
+}
+
+/* Utilities */
+.container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container p {
+  margin-bottom: 1rem;
+}
+
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.main-text {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.2rem;
+}
+
+.secondary-text {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.normal-text {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.btn {
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.8rem;
+  width: 13rem;
+  font-size: 1.3rem;
+}
+
+/* Header */
+.site-header {
+  background-color: #ffcc00;
+}
+
+.site-header h1 {
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+
+.site-header .flex-space-between a {
+  color: black;
+}
+
+nav a {
+  color: black;
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+
+#mobile-cat {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  .main-text {
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    padding-top: 1rem;
+  }
+
+  .secondary-text {
+    font-size: 1.5rem;
+  }
+
+  .normal-text {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.8rem;
+    margin-top: 1.3rem;
+    width: 11rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  #pc-cat {
+    display: none;
+  }
+
+  #mobile-cat {
+    display: block;
+  }
+}

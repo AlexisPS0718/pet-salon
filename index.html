@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Fashion Pet</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐈‍⬛</text></svg>" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="flex-space-between">
+        <div>
+          <a href="index.html">
+            <h1>The Fashion Pet</h1>
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="register.html">Register</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container flex-row">
+      <div class="container">
+        <p class="main-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="secondary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores incidunt culpa
+          hic?</p>
+        <div id="mobile-cat">
+          <img src="media/Scottish-Fold.png" alt="Scottish Fold">
+        </div>
+        <p class="normal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero commodi autem tenetur quia
+          deleniti illo fugit
+          perferendis quo, consectetur nam delectus cumque totam, fuga illum quam facilis odio, aspernatur accusantium?
+        </p>
+        <p class="normal-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <a class="btn" href="">Book an appointment</a>
+      </div>
+      <div class="container" id="pc-cat">
+        <img src="media/Scottish-Fold.png" alt="Scottish Fold">
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h2 class="main-text centered-text">Meet our fluffy clients</h2>
+      <p class="secondary-text centered-text">Currently we have <span id="numPets"></span> pet clients!</p>
+      <div class="flex-column">
+        <p class="normal-text">Meet the pets:</p>
+        <div class="normal-text" id="pet-list"></div>
+      </div>
+    </div>
+  </main>
+  <script src="scripts/register.js"></script>
+</body>
+
+</html>
