@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - The Fashion Pet</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐈‍⬛</text></svg>" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="flex-space-between">
+        <div>
+          <a href="index.html">
+            <h1>The Fashion Pet</h1>
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#">Register</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="bg-color-primary">
+    <div class="container">
+      <h2 class="main-text centered-text">Register a new pet</h2>
+      <p class="normal-text centered-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, praesentium
+        laboriosam
+        facilis impedit vero
+        maxime
+        quas incidunt omnis deserunt sit. Incidunt nulla deleniti recusandae omnis beatae earum libero eum enim.</p>
+    </div>
+    <div class="bg-color form form-flex padding-2">
+      <div class="wd-50">
+        <div class="input-control">
+          <label for="">Name:</label>
+          <input type="text" name="txtName" id="txtName" placeholder="Write your pet's name">
+        </div>
+        <div class="input-control">
+          <label for="">Age:</label>
+          <input type="number" name="txtAge" id="txtAge" placeholder="Write your pet's age">
+        </div>
+        <div id="radio" class="input-control flex-column">
+          <label for="">Gender:</label>
+          <div class="flex-row">
+            <span>Male</span>
+            <input class="radio" type="radio" id="male" name="gender" value="male" />
+          </div>
+          <div class="flex-row">
+            <span>Female</span>
+            <input class="radio" type="radio" id="female" name="gender" value="female" />
+          </div>
+        </div>
+        <div class="input-control">
+          <label for="">Service: </label>
+          <select name="" id="ctrlService">
+            <option value="bath">Bath</option>
+            <option value="haircut">Haircut</option>
+            <option value="brushing">Brushing</option>
+            <option value="nail-trim">Nail trim</option>
+          </select>
+        </div>
+        <div class="input-control">
+          <label for="">Type: </label>
+          <select name="" id="ctrlType">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn-secondary" onclick="getType()">Continue</button>
+          <button class="btn-secondary bg-red" onclick="clearForm()">Clear form</button>
+        </div>
+      </div>
+      <div class="wd-50">
+        <div class="input-control" style="display: none;" id="breedC">
+          <label for="">Breed: </label>
+          <select name="" id="ctrlBreedC">
+            <option value="scottish">Scottish Fold</option>
+            <option value="british">British Shorthair</option>
+            <option value="siamese">Siamese</option>
+          </select>
+        </div>
+        <div class="input-control" style="display: none;" id="breedD">
+          <label for="">Breed: </label>
+          <select name="" id="ctrlBreedD">
+            <option value="great-dane">Great Dane</option>
+            <option value="golden">Golden Retriever</option>
+          </select>
+        </div>
+        <div id="register" style="display: none;">
+          <button class="btn-secondary" onclick="register()">Register</button>
+        </div>
+      </div>
+    </div>
+    <section id="register-pets" class="bg-color" style="display: none;">
+      <div class="container">
+        <h2 class="main-text centered-text">Thank you for your registration</h2>
+        <p class="secondary-text centered-text">Meet our fluffy clients</p>
+        <p class="secondary-text centered-text">Currently we have <span id="numPets"></span> pet clients!</p>
+        <div class="flex-column centered-text">
+          <p class="normal-text">Meet the pets:</p>
+          <div class="normal-text" id="pet-list"></div>
+        </div>
+        <p class="normal-text centered-text">Fun fact: The average age is <span id="avg"></span> years old!</p>
+      </div>
+    </section>
+    <div id="pet-list"></div>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <a href="index.html">
+        <h2>The Fashion Pet</h2>
+      </a>
+      <hr><br>
+      <div class="flex">
+        <div class="about">
+          <p class="main-text-2">About</p>
+          <div id="salon-info"></div>
+        </div>
+        <div>
+          <p class="main-text-2">Follow us</p>
+          <div class="flex-center">
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <script src="scripts/display.js"></script>
+  <script src="scripts/register.js"></script>
+  <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

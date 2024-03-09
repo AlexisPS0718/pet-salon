@@ -1,81 +1,91 @@
-let petSalon = {
-  name: 'Pet Salon',
-  phone: 999 - 9999 - 9999,
-  price: 1000,
-  address: {
-    country: 'United States',
-    city: 'San Francisco',
-    zip: '12345'
-  },
-  pets: [
-    {
-      name: 'Scooby',
-      age: 10,
-      gender: 'Male',
-      service: 'Bath',
-      breed: 'Great Dane',
-      type: 'dog'
-    },
-    {
-      name: 'Cookie',
-      age: 3,
-      gender: 'Female',
-      service: 'Haircut',
-      breed: 'Scottish Fold',
-      type: 'cat'
-    },
-    {
-      name: 'Salsa',
-      age: 5,
-      gender: 'Male',
-      service: 'Brushing',
-      breed: 'Siamese',
-      type: 'cat'
-    },
-    {
-      name: 'Morgana',
-      age: 2,
-      gender: 'Male',
-      service: 'Nail trim',
-      breed: 'British Shorthair',
-      type: 'cat'
-    }
-  ]
+let pets = [];
+let inputName;
+let inputAge;
+let inputGender;
+let inputService;
+let inputBreed;
+let inputType;
+
+window.onload = init();
+
+function Pet(name, age, gender, service, breed, type) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+  this.service = service;
+  this.breed = breed;
+  this.type = type;
 }
 
-document.getElementById('numPets').innerHTML = getNumberOfPets();
-document.getElementById('pet-list').innerHTML = getPetNames();
-document.getElementById('avg').innerHTML = getAverageAges();
+function init() {
+  let pet1 = new Pet("Scooby", 10, "Male", "Bath", "Great Dane", "dog");
+  let pet2 = new Pet("Cookie", 3, "Female", "Haircut", "Scottish Fold", "cat");
+  let pet3 = new Pet("Salsa", 5, "Male", "Brushing", "Siamese", "cat");
+  let pet4 = new Pet("Morgana", 2, "Male", "Nail trim", "British Shorthair", "cat");
 
-function getNumberOfPets() {
-  return petSalon.pets.length;
+  pets.push(pet1, pet2, pet3, pet4);
+
+  inputName = document.getElementById("txtName");
+  inputAge = document.getElementById("txtAge");
+  inputGender = document.getElementsByName("gender");
+  inputService = document.getElementById("ctrlService");
+  inputType = document.getElementById("ctrlType");
 }
 
-function getPetNames() {
-  let list = '<ul>';
+function register() {
+  let newPet = new Pet(inputName.value, Number(inputAge.value), getGender(), inputService.value, inputBreed.value, inputType.value);
+  pets.push(newPet);
+  document.getElementById('pet-list').innerHTML = getPetNames();
+  document.getElementById('register-pets').style.display = 'block';
+  document.getElementById('numPets').innerHTML = getNumberOfPets();
+  document.getElementById('pet-list').innerHTML = getPetNames();
+  document.getElementById('avg').innerHTML = getAverageAges();
+}
 
-  for (let i = 0; i < petSalon.pets.length; i++) {
-    list += `<li>${petSalon.pets[i].name}`;
-    if (petSalon.pets[i].type === 'dog') {
-      list += ' 🐕</li>';
-    } else if (petSalon.pets[i].type === 'cat') {
-      list += ' 🐈</li>';
+function clearForm() {
+  document.getElementById('txtName').value = '';
+  document.getElementById('txtAge').value = '';
+  document.getElementById('register').style.display = 'none';
+  document.getElementById('breedC').style.display = 'none';
+  document.getElementById('breedD').style.display = 'none';
+}
+
+function getGender() {
+  for (let i = 0; i < inputGender.length; i++) {
+    if (inputGender[i].checked) {
+      return inputGender[i].value;
     }
   }
+}
 
-  list += '</ul>';
+function getType() {
+  if (inputType.value == 'dog') {
+    document.getElementById('breedD').style.display = 'block';
+    document.getElementById('breedC').style.display = 'none';
+    inputBreed = document.getElementById('ctrlBreedD');
+  } else if (inputType.value == 'cat') {
+    document.getElementById('breedC').style.display = 'block';
+    document.getElementById('breedD').style.display = 'none';
+    inputBreed = document.getElementById('ctrlBreedC');
+  }
 
-  return list;
+  document.getElementById('register').style.display = 'block';
+}
+
+function getNumberOfPets() {
+  return pets.length;
 }
 
 function getAverageAges() {
+  let sum = 0;
   let avg = 0;
 
-  for (let i = 0; i < petSalon.pets.length; i++) {
-    avg += petSalon.pets[i].age;
+  for (let i = 0; i < pets.length; i++) {
+    sum += pets[i].age;
+    console.log(pets[i].age);
   }
 
-  avg = avg / petSalon.pets.length;
+  avg = sum / pets.length;
 
   return avg;
 }

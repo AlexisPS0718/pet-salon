@@ -20,17 +20,17 @@
     <div class="container">
       <div class="flex-space-between">
         <div>
-          <a href="index.html">
+          <a href="#">
             <h1>The Fashion Pet</h1>
           </a>
         </div>
         <nav>
-          <a href="index.html">Home</a>
+          <a href="#">Home</a>
           <a href="register.html">Register</a>
         </nav>
       </div>
     </div>
-    <div class="container flex-row">
+    <div class="container flex-row gap-2">
       <div class="container">
         <p class="main-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <p class="secondary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores incidunt culpa
@@ -43,25 +43,45 @@
           perferendis quo, consectetur nam delectus cumque totam, fuga illum quam facilis odio, aspernatur accusantium?
         </p>
         <p class="normal-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <a class="btn" href="">Book an appointment</a>
+        <a class="btn" href="register.html">Book an appointment</a>
       </div>
       <div class="container" id="pc-cat">
         <img src="media/Scottish-Fold.png" alt="Scottish Fold">
       </div>
     </div>
   </header>
-  <main>
-    <div class="container">
-      <h2 class="main-text centered-text">Meet our fluffy clients</h2>
-      <p class="secondary-text centered-text">Currently we have <span id="numPets"></span> pet clients!</p>
-      <div class="flex-column">
-        <p class="normal-text">Meet the pets:</p>
-        <div class="normal-text" id="pet-list"></div>
-      </div>
-      <p class="normal-text centered-text">Fun fact: The average age is <span id="avg"></span> years old!</p>
-    </div>
+  <main class="bg-color">
+
   </main>
-  <script src="scripts/register.js"></script>
+  <footer>
+    <div class="footer-container">
+      <a href="#">
+        <h2>The Fashion Pet</h2>
+      </a>
+      <hr><br>
+      <div class="flex">
+        <div class="about">
+          <p class="main-text-2">About</p>
+          <div id="salon-info"></div>
+        </div>
+        <div>
+          <p class="main-text-2">Follow us</p>
+          <div class="flex-center">
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <script src="scripts/display.js"></script>
+  <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
