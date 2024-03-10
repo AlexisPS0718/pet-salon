@@ -3,6 +3,7 @@ let inputName;
 let inputAge;
 let inputGender;
 let inputService;
+let divBreed;
 let inputBreed;
 let inputType;
 
@@ -30,24 +31,56 @@ function init() {
   inputGender = document.getElementsByName("gender");
   inputService = document.getElementById("ctrlService");
   inputType = document.getElementById("ctrlType");
+  divBreed = document.getElementById("breed");
+  divBreed.style.display = 'none';
+  inputBreed = document.getElementById("ctrlBreed");
 }
 
 function register() {
+  inputBreed = document.getElementById("ctrlBreed");
   let newPet = new Pet(inputName.value, Number(inputAge.value), getGender(), inputService.value, inputBreed.value, inputType.value);
-  pets.push(newPet);
-  document.getElementById('pet-list').innerHTML = getPetNames();
-  document.getElementById('register-pets').style.display = 'block';
-  document.getElementById('numPets').innerHTML = getNumberOfPets();
-  document.getElementById('pet-list').innerHTML = getPetNames();
-  document.getElementById('avg').innerHTML = getAverageAges();
+
+  if (isValid(newPet)) {
+    pets.push(newPet);
+
+    document.getElementById('register-pets').style.display = 'block';
+    document.getElementById('table').style.display = 'block';
+    document.getElementById('numPets').innerHTML = getNumberOfPets();
+    getInfo();
+    displayCards();
+    displayTable();
+    document.getElementById('avg').innerHTML = getAverageAges();
+    clearForm();
+    inputName.classList.remove('alert-error');
+    inputAge.classList.remove('alert-error');
+  }
 }
 
 function clearForm() {
-  document.getElementById('txtName').value = '';
-  document.getElementById('txtAge').value = '';
+  inputName.value = '';
+  inputAge.value = '';
+  divBreed.style.display = 'none';
+  inputService.selectedIndex = "0";
+  inputType.selectedIndex = "0";
   document.getElementById('register').style.display = 'none';
-  document.getElementById('breedC').style.display = 'none';
-  document.getElementById('breedD').style.display = 'none';
+  inputBreed.selectedIndex = "0";
+}
+
+function isValid(pet) {
+  inputName.classList.remove('alert-error');
+  inputService.classList.remove('alert-error');
+
+  if (!pet.name || !pet.service) {
+    if (!pet.name) {
+      inputName.classList.add('alert-error');
+    }
+    if (!pet.service) {
+      inputService.classList.add('alert-error');
+    }
+    return false;
+  }
+
+  return true;
 }
 
 function getGender() {
@@ -60,13 +93,34 @@ function getGender() {
 
 function getType() {
   if (inputType.value == 'dog') {
-    document.getElementById('breedD').style.display = 'block';
-    document.getElementById('breedC').style.display = 'none';
-    inputBreed = document.getElementById('ctrlBreedD');
+    divBreed.style.display = 'block';
+    divBreed.innerHTML =
+      `<div class="input-control">
+          <label for="">Breed: </label>
+          <select name="" id="ctrlBreed">
+            <option value="" selected="true" disabled>Select a breed</option>
+            <option value="Great Dane">Great Dane</option>
+            <option value="Golden Retriever">Golden Retriever</option>
+          </select>
+        </div>
+        <div id="register">
+          <button class="btn-secondary" onclick="register()">Register</button>
+        </div>`;
   } else if (inputType.value == 'cat') {
-    document.getElementById('breedC').style.display = 'block';
-    document.getElementById('breedD').style.display = 'none';
-    inputBreed = document.getElementById('ctrlBreedC');
+    divBreed.style.display = 'block';
+    divBreed.innerHTML =
+      `<div class="input-control">
+          <label for="">Breed: </label>
+          <select name="" id="ctrlBreed">
+            <option value="" selected="true" disabled>Select a breed</option>
+            <option value="Scottish Fold">Scottish Fold</option>
+            <option value="British Shorthair">British Shorthair</option>
+            <option value="Siamese">Siamese</option>
+          </select>
+        </div>
+        <div id="register">
+          <button class="btn-secondary" onclick="register()">Register</button>
+        </div>`;
   }
 
   document.getElementById('register').style.display = 'block';

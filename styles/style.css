@@ -80,6 +80,10 @@ button:hover {
   padding: 2rem;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .container {
   width: 80%;
   margin-left: auto;
@@ -126,6 +130,11 @@ button:hover {
 
 .items-center {
   align-items: center;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flex-center {
@@ -247,11 +256,14 @@ nav a {
 }
 
 /* Main */
-#pet-list {
-  text-align: center;
-  position: relative;
-  direction: rtl;
-  left: 3.7rem;
+.about-grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  /* margin-left: 10%;
+  margin-right: 10%; */
 }
 
 /* Forms */
@@ -304,7 +316,7 @@ nav a {
   background-color: black;
   color: white;
   font-size: 1.1rem;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 1.7rem 1rem 1.7rem;
   border-radius: 10px;
   margin-left: 2.5rem;
   margin-top: 1rem;
@@ -314,6 +326,41 @@ nav a {
 .form-flex {
   display: flex;
   justify-content: center;
+}
+
+.alert-error {
+  border: 1.5px solid red;
+}
+
+/* Cards */
+#pet-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card {
+  background-color: tomato;
+  border-radius: 15px;
+  padding: 3rem;
+}
+
+.bath {
+  background-color: #bae1ff;
+}
+
+.haircut {
+  background-color: #baffc9;
+}
+
+.brushing {
+  background-color: #ffdfba;
+}
+
+.nailtrim {
+  background-color: #ffb3ba;
 }
 
 /* Footer */
