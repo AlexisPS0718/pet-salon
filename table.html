@@ -86,7 +86,20 @@
           <button class="btn-secondary bg-red" onclick="clearForm()">Clear form</button>
         </div>
       </div>
-      <div class="wd-50" id="breed">
+      <div id="form-half" class="wd-50" style="display: none;">
+        <div id="breed"></div>
+        <div class="input-control">
+          <label for="">Payment method: </label>
+          <select name="" id="payMethod">
+            <option value="" selected="true" disabled>Select a method</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Cash">Cash</option>
+          </select>
+        </div>
+        <div id="register">
+          <button class="btn-secondary" onclick="register()">Register</button>
+        </div>
       </div>
     </div>
     <section id="register-pets" class="bg-color" style="display: none;">
@@ -102,6 +115,8 @@
         <br>
         <p class="normal-text centered-text">Fun fact: The average age is <span id="avg"></span> years old!</p>
       </div>
+    </section>
+    <section id="table" class="bg-color" style="display: none;">
       <div class="container flex-center">
         <table class="table table-striped">
           <thead>
@@ -112,6 +127,8 @@
               <th scope="col">Service</th>
               <th scope="col">Type</th>
               <th scope="col">Breed</th>
+              <th scope="col">Action</th>
+              <th scope="col">Payment method</th>
             </tr>
           </thead>
           <tbody id="body">
@@ -119,9 +136,6 @@
         </table>
       </div>
       <br>
-    </section>
-    <section id="table" class="bg-color" style="display: none;">
-
     </section>
   </main>
   <footer>
