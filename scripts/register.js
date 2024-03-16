@@ -21,6 +21,8 @@ function Pet(name, age, gender, service, breed, type, method) {
 }
 
 function init() {
+  $("#closeNotification").click(hideNotification);
+
   let pet1 = new Pet("Scooby", 10, "Male", "Bath", "Great Dane", "dog", "Credit Card");
   let pet2 = new Pet("Cookie", 3, "Female", "Haircut", "Scottish Fold", "cat", "Debit Card");
   let pet3 = new Pet("Salsa", 5, "Male", "Brushing", "Siamese", "cat", "Credit Card");
@@ -88,7 +90,8 @@ function isValid(pet) {
     }
     return false;
   }
-
+  $("#notification").removeClass("alert-danger");
+  showNotification("Pet registered successfully", "alert-success");
   return true;
 }
 
@@ -161,4 +164,18 @@ function deletePet(index) {
   document.getElementById('numPets').innerHTML = getNumberOfPets();
   document.getElementById('avg').innerHTML = getAverageAges();
   getInfo();
+  $("#notification").removeClass("alert-success");
+  showNotification("Pet deleted successfully", "alert-danger");
+}
+
+function showNotification(msg, style) {
+  $("#notification").addClass(style);
+  $("#notificationText").text(msg);
+  $("#notification").show();
+  setTimeout(hideNotification, 5000);
+
+}
+
+function hideNotification() {
+  $("#notification").hide();
 }

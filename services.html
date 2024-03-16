@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - The Fashion Pet</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐈‍⬛</text></svg>" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="flex-space-between">
+        <div>
+          <a href="index.html">
+            <h1>The Fashion Pet</h1>
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="register.html">Register</a>
+          <a href="#">Services</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div id="notification" class="notification">
+    <span id="closeNotification" class="close">x</span>
+    <p id="notificationText">This is dynamic text</p>
+  </div>
+  <main class="bg-color-primary">
+    <div class="container">
+      <h2 class="main-text centered-text">Add a new service</h2>
+      <p class="normal-text centered-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quasi, nemo
+        blanditiis impedit tenetur dicta itaque atque delectus ea corrupti corporis temporibus id eos illum! Laudantium
+        alias repudiandae molestias exercitationem.</p>
+    </div>
+    <div class="bg-color form form-flex padding-2">
+      <div class="wd-100">
+        <div class="input-control">
+          <label for="">Service name:</label>
+          <input type="text" name="serviceName" id="serviceName" placeholder="Write a new service name">
+        </div>
+        <div class="input-control">
+          <label for="">Price:</label>
+          <input type="number" name="servicePrice" id="servicePrice" placeholder="Write the service price">
+        </div>
+        <div>
+          <button class="btn-secondary" onclick="register()">Register</button>
+          <button class="btn-secondary bg-red" onclick="clearForm()">Clear form</button>
+        </div>
+      </div>
+    </div>
+    <section id="register-services" class="bg-color" style="display: none;">
+      <div class="container">
+        <h2 class="main-text centered-text">Our services</h2>
+        <div class="flex-column">
+          <div id="service-list"></div>
+        </div>
+      </div>
+      <br>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <a href="index.html">
+        <h2>The Fashion Pet</h2>
+      </a>
+      <hr><br>
+      <div class="flex">
+        <div class="about">
+          <p class="main-text-2">About</p>
+          <div id="salon-info"></div>
+        </div>
+        <div>
+          <p class="main-text-2">Follow us</p>
+          <div class="flex-center">
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="flex-center">
+              <a href="#" class="sm-container flex-center"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="main-text-2">Sign up for our newsletter:</p>
+          <input class="input-small" type="email" name="" id="">
+          <button class="btn-sm-white">Sign up</button>
+        </div>
+      </div>
+  </footer>
+  <script src="./plugins/jquery-3.7.1.js"></script>
+  <script src="./scripts/display.js"></script>
+  <script src="./scripts/services.js"></script>
+  <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

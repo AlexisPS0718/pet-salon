@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Fashion Pet</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="./styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -27,6 +27,8 @@
         <nav>
           <a href="#">Home</a>
           <a href="register.html">Register</a>
+          <a href="services.html">Services</a>
+          <a id="dark-mode" href="#">Dark mode</a>
         </nav>
       </div>
     </div>
@@ -81,6 +83,58 @@
       </div>
       <br>
     </section>
+    <section class="container">
+      <h2 class="centered-text main-text">Services</h2>
+      <div class="services-grid">
+        <div>
+          <h3 class="secondary-text">All our services</h3>
+          <ul class="normal-text" id="services">
+            <li class="pointer">Bath</li>
+            <li class="pointer">Haircut</li>
+            <li class="pointer">Brushing</li>
+            <li class="pointer">Nail trim</li>
+          </ul>
+        </div>
+        <div>
+          <div id="bath" class="flex-center flex-row">
+            <div>
+              <h4 class="secondary-text">Bath</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quod adipisci dicta optio, dolorum sit
+                reprehenderit in odio aut aliquam, nesciunt error velit doloremque quis tenetur quas et, necessitatibus
+                quia?</p>
+            </div>
+            <img class="img-service" src="./media/cat-bathing.webp" alt="Cat bathing">
+          </div>
+          <div id="haircut" class="flex-center flex-row">
+            <div>
+              <h4 class="secondary-text">Haircut</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quod adipisci dicta optio, dolorum sit
+                reprehenderit in odio aut aliquam, nesciunt error velit doloremque quis tenetur quas et, necessitatibus
+                quia?</p>
+            </div>
+            <img class="img-service" src="./media/dog-haircut.jpeg" alt="Dog getting a haircut">
+          </div>
+          <div id="brushing" class="flex-center flex-row">
+            <div>
+              <h4 class="secondary-text">Brushing</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quod adipisci dicta optio, dolorum sit
+                reprehenderit in odio aut aliquam, nesciunt error velit doloremque quis tenetur quas et, necessitatibus
+                quia?</p>
+            </div>
+            <img class="img-service" src="./media/dog-brushing.webp" alt="Dog getting brushed">
+          </div>
+          <div id="nail-trim" class="flex-center flex-row">
+            <div>
+              <h4 class="secondary-text">Nail trim</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quod adipisci dicta optio, dolorum sit
+                reprehenderit in odio aut aliquam, nesciunt error velit doloremque quis tenetur quas et, necessitatibus
+                quia?</p>
+            </div>
+            <img class="img-service" src="./media/cat-nail.jpg" alt="Cat nail trimming">
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
     <div class="footer-container">
@@ -110,10 +164,14 @@
         <div>
           <p class="main-text-2">Sign up for our newsletter:</p>
           <input class="input-small" type="email" name="" id="">
+          <button class="btn-sm-white">Sign up</button>
         </div>
       </div>
   </footer>
-  <script src="scripts/display.js"></script>
+  <script src="./plugins/jquery-3.7.1.js"></script>
+  <script src="./scripts/script2.js"></script>
+  <script src="./scripts/displayServices.js"></script>
+  <script src="./scripts/display.js"></script>
   <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
 </body>
 

@@ -19,14 +19,6 @@ main {
   flex: 1;
 }
 
-img {
-  max-width: 100%;
-}
-
-a {
-  text-decoration: none;
-}
-
 h1,
 nav {
   margin-top: 0.5rem;
@@ -36,6 +28,10 @@ nav {
 h2 {
   padding-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 ul {
@@ -55,6 +51,10 @@ hr {
   border: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -72,7 +72,7 @@ button:hover {
   background-color: red !important;
 }
 
-.wd-50 {
+.wd-100 {
   width: 100%;
 }
 
@@ -80,71 +80,12 @@ button:hover {
   padding: 2rem;
 }
 
-.bold {
-  font-weight: bold;
-}
-
-.container {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container p {
-  padding-bottom: 1rem;
-}
-
-.form {
-  border-radius: 20px;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
-}
-
-.flex {
-  display: flex;
-  gap: 8rem;
-}
-
-.flex-space-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flex-row {
-  display: flex;
-  align-items: center;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-
-}
-
 .gap-2 {
   gap: 2rem;
 }
 
-.items-center {
-  align-items: center;
-}
-
-.margin-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.centered-text {
-  text-align: center;
+.bold {
+  font-weight: bold;
 }
 
 .main-text {
@@ -171,6 +112,70 @@ button:hover {
   font-weight: 400;
 }
 
+.color-white {
+  color: white !important;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container p {
+  padding-bottom: 1rem;
+}
+
+.pointer {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.pointer:hover {
+  color: #dbb751;
+}
+
+.flex {
+  display: flex;
+  gap: 8rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.items-center {
+  align-items: center;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered-text {
+  text-align: center;
+}
+
 .btn {
   display: block;
   background-color: black;
@@ -186,15 +191,34 @@ button:hover {
   border-radius: 5px;
 }
 
-.info {
-  background-color: #EEC759;
-  padding: 1rem 1rem 0 1rem;
-  color: black;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
+.btn-white {
+  display: block;
+  background-color: white;
+  font-family: "Titillium Web", sans-serif;
+  color: black !important;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.8rem;
+  margin-bottom: 2rem;
+  width: 13rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.clicked {
+  background-color: #ccc;
+  border-radius: 5px;
 }
 
 /* Header */
+nav a {
+  color: black;
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+
 .site-header {
   background-color: #ffcc00;
 }
@@ -208,11 +232,9 @@ button:hover {
   color: black;
 }
 
-nav a {
-  color: black;
-  font-weight: 300;
-  font-size: 1.6rem;
-  margin-right: 2rem;
+.header-black {
+  background-color: black;
+  color: white;
 }
 
 #mobile-cat {
@@ -265,6 +287,37 @@ nav a {
   }
 }
 
+/* Notifications */
+.notification {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 300px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+}
+
+.alert-danger {
+  background-color: #FF6961;
+}
+
+.alert-success {
+  background-color: #77DD77;
+}
+
+#notificationText {
+  margin: 0;
+}
+
 /* Main */
 .about-grid {
   display: grid;
@@ -274,7 +327,45 @@ nav a {
   row-gap: 1rem;
 }
 
+.services-grid {
+  display: grid;
+  grid-template-columns: 20% 60%;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.img-service {
+  width: 30%;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+#services {
+  list-style-type: disc;
+}
+
+.info {
+  background-color: #EEC759;
+  padding: 1rem 1rem 0 1rem;
+  color: black;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
 /* Forms */
+.form {
+  border-radius: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.form-flex {
+  display: flex;
+  justify-content: center;
+}
+
 .input-control {
   margin-bottom: 0.5rem;
   margin-left: 2.5rem;
@@ -301,6 +392,14 @@ nav a {
   width: 83%;
   border-radius: 5px;
   padding: 0.7rem;
+}
+
+.input-small {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .radio {
@@ -342,21 +441,19 @@ nav a {
   border-radius: 10px;
 }
 
-.form-flex {
-  display: flex;
-  justify-content: center;
+.btn-sm-white {
+  display: inline-block;
+  font-family: "Titillium Web", sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-top: 0.3rem;
 }
 
 .alert-error {
   border: 1.5px solid red;
-}
-
-.input-small {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1rem;
-  width: 100%;
-  border-radius: 5px;
-  padding: 0.5rem;
 }
 
 /* Cards */
@@ -368,8 +465,16 @@ nav a {
   margin-right: 10%;
 }
 
+#service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .card {
-  background-color: tomato;
+  background-color: #ccc;
   border-radius: 15px;
   padding: 3rem;
 }
@@ -402,13 +507,13 @@ footer {
   margin-right: auto;
 }
 
-.footer-container a {
-  color: white;
-}
-
 .footer-container h2 {
   font-weight: 400;
   font-size: 2.3rem;
+}
+
+.footer-container a {
+  color: white;
 }
 
 .about div {

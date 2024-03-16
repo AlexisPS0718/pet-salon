@@ -88,8 +88,8 @@ function getInfo() {
 
   info = `
       <div class="flex-row gap-2 info">
-        <p>🐈: ${cats}</p>
-        <p>🐕: ${dogs}</p>
+        <p id="cats">🐈: ${cats}</p>
+        <p id="dogs">🐕: ${dogs}</p>
         <p>🛀: ${bath}</p>
         <p>✂️: ${haircut}</p>
         <p>🪮: ${brushing}</p>
@@ -155,4 +155,23 @@ function displayTable() {
   }
 
   TABLE_DIV.innerHTML = table;
+}
+
+function displayServices() {
+  const SERVICES_DIV = document.getElementById('service-list');
+  card = '';
+
+  for (let i = 0; i < services.length; i++) {
+    let service = services[i];
+
+    card += `
+      <div class="card">
+        <p class="secondary-text">${service.name}</p>
+        <p><span class=bold>Price: </span>${service.price}</p>
+        <p><button class="btn-small" onclick="deleteService(${i})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg></button></p>
+      </div>
+    `;
+  }
+
+  SERVICES_DIV.innerHTML = card;
 }
