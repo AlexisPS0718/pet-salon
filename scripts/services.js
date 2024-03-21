@@ -12,12 +12,12 @@ function Service(name, price) {
 function init() {
   $("#closeNotification").click(hideNotification);
 
-  let serv1 = new Service("Bath", 30);
+  /* let serv1 = new Service("Bath", 30);
   let serv2 = new Service("Haircut", 50);
   let serv3 = new Service("Brushing", 25);
-  let serv4 = new Service("Nail trim", 25);
+  let serv4 = new Service("Nail trim", 25); */
 
-  services.push(serv1, serv2, serv3, serv4);
+  /* services.push(serv1, serv2, serv3, serv4); */
 
   inputName = document.getElementById("serviceName");
   inputPrice = document.getElementById("servicePrice");
@@ -28,10 +28,12 @@ function register() {
 
   if (isValid(newService)) {
     services.push(newService);
+    saveItem(newService);
     document.getElementById('register-services').style.display = 'block';
 
     clearForm();
-    displayServices();
+    /* displayServices(); */
+    displayItems();
 
     inputName.classList.remove('alert-error');
     inputPrice.classList.remove('alert-error');
@@ -63,9 +65,12 @@ function isValid(service) {
 }
 
 function deleteService(index) {
-  services.splice(index, 1);
+  let items = readItems();
+  items.splice(index, 1);
+  console.log(items);
 
-  displayServices();
+  /* displayServices(); */
+  displayItems();
 
   $("#notification").removeClass("alert-success");
   showNotification("Service deleted successfully", "alert-danger");
@@ -80,4 +85,22 @@ function showNotification(msg, style) {
 
 function hideNotification() {
   $("#notification").hide();
+}
+
+function displayItems() {
+  let items = readItems();
+  const SERVICES_DIV = document.getElementById('service-list');
+  let card = "";
+
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+
+    card += `
+      <div class="card">
+        <p class="secondary-text">${item.name}</p>
+        <p><span class=bold>Price: </span>$${item.price}</p>
+      </div>`;
+  }
+
+  SERVICES_DIV.innerHTML = card;
 }

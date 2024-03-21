@@ -57,6 +57,7 @@ function getInfo() {
   let haircut = 0;
   let brushing = 0;
   let nailTrim = 0;
+  let profit = getProfit();
   info = '';
 
   for (let i = 0; i < pets.length; i++) {
@@ -94,6 +95,7 @@ function getInfo() {
         <p>✂️: ${haircut}</p>
         <p>🪮: ${brushing}</p>
         <p>🐾: ${nailTrim}</p>
+        <p>💵: $${profit}</p>
       </div>
     `;
 

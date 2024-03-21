@@ -21,6 +21,7 @@ function Pet(name, age, gender, service, breed, type, method) {
 }
 
 function init() {
+  getServices();
   $("#closeNotification").click(hideNotification);
 
   let pet1 = new Pet("Scooby", 10, "Male", "Bath", "Great Dane", "dog", "Credit Card");
@@ -145,6 +146,10 @@ function getAverageAges() {
   let sum = 0;
   let avg = 0;
 
+  if (!pets.length) {
+    return 0;
+  }
+
   for (let i = 0; i < pets.length; i++) {
     sum += pets[i].age;
     console.log(pets[i].age);
@@ -178,4 +183,32 @@ function showNotification(msg, style) {
 
 function hideNotification() {
   $("#notification").hide();
+}
+
+function getServices() {
+  let items = readItems();
+  let list = $("#ctrlService");
+  let option = "";
+
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+
+    option = `<option value="${item.name}">${item.name}</option>`;
+    list.append(option);
+  }
+}
+
+function getProfit() {
+  let items = readItems();
+  let profit = 0;
+
+  for (let i = 0; i < pets.length; i++) {
+    for (let j = 0; j < items.length; j++) {
+      if (pets[i].service == items[j].name) {
+        profit += items[j].price;
+        break;
+      }
+    }
+  }
+  return profit;
 }
