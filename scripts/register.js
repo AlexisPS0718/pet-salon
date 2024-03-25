@@ -10,7 +10,7 @@ let inputMethod;
 
 window.onload = init();
 
-function Pet(name, age, gender, service, breed, type, method) {
+function Pet(name, age, gender, service, breed, type, method, price) {
   this.name = name;
   this.age = age;
   this.gender = gender;
@@ -18,16 +18,17 @@ function Pet(name, age, gender, service, breed, type, method) {
   this.breed = breed;
   this.type = type;
   this.method = method;
+  this.price = price;
 }
 
 function init() {
   getServices();
   $("#closeNotification").click(hideNotification);
 
-  let pet1 = new Pet("Scooby", 10, "Male", "Bath", "Great Dane", "dog", "Credit Card");
-  let pet2 = new Pet("Cookie", 3, "Female", "Haircut", "Scottish Fold", "cat", "Debit Card");
-  let pet3 = new Pet("Salsa", 5, "Male", "Brushing", "Siamese", "cat", "Credit Card");
-  let pet4 = new Pet("Morgana", 2, "Male", "Nail trim", "British Shorthair", "cat", "Cash");
+  let pet1 = new Pet("Scooby", 10, "Male", "Bath", "Great Dane", "dog", "Credit Card", getServicePrice("Bath"));
+  let pet2 = new Pet("Cookie", 3, "Female", "Haircut", "Scottish Fold", "cat", "Debit Card", getServicePrice("Haircut"));
+  let pet3 = new Pet("Salsa", 5, "Male", "Brushing", "Siamese", "cat", "Credit Card", getServicePrice("Brushing"));
+  let pet4 = new Pet("Morgana", 2, "Male", "Nail trim", "British Shorthair", "cat", "Cash", getServicePrice("Nail trim"));
 
   pets.push(pet1, pet2, pet3, pet4);
 
@@ -44,7 +45,12 @@ function init() {
 
 function register() {
   inputBreed = document.getElementById("ctrlBreed");
-  let newPet = new Pet(inputName.value, Number(inputAge.value), getGender(), inputService.value, inputBreed.value, inputType.value, inputMethod.value);
+
+  console.log("Service: " + inputService.value);
+
+  let newPet = new Pet(inputName.value, Number(inputAge.value), getGender(), inputService.value, inputBreed.value, inputType.value, inputMethod.value, getServicePrice(inputService.value));
+
+  console.log("Result: " + getServicePrice(String(inputService.value)))
 
   if (isValid(newPet)) {
     pets.push(newPet);
@@ -152,7 +158,7 @@ function getAverageAges() {
 
   for (let i = 0; i < pets.length; i++) {
     sum += pets[i].age;
-    console.log(pets[i].age);
+    /* console.log(pets[i].age); */
   }
 
   avg = sum / pets.length;
@@ -196,6 +202,20 @@ function getServices() {
     option = `<option value="${item.name}">${item.name}</option>`;
     list.append(option);
   }
+}
+
+function getServicePrice(service) {
+  let items = readItems();
+  let price = 0;
+
+  for (let i = 0; i < items.length; i++) {
+    if (service == items[i].name) {
+      price = items[i].price;
+      break;
+    }
+  }
+  console.log("Price: " + Number(price));
+  return Number(price);
 }
 
 function getProfit() {
